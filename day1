@@ -1,0 +1,13 @@
+
+ 
+file1 = open('lines.txt', 'r')
+count = 2
+line = file1.readline()
+
+emp_str = ""
+for d in line:
+    if d.isdigit():
+        emp_str = emp_str + d
+print("Find numbers from string:",emp_str)
+
+print(line)
