@@ -1,22 +1,38 @@
+# Import the re module for regular expressions
+import re
 
- 
-file1 = open('lines.txt', 'r')
-list = open('lines.txt', 'r')
-d = {}
-with open("lines.txt") as f:
-    for line in f:
-        
+# Create a dictionary mapping words to numbers
+dictionary = {
+    "one": "1",
+    "two": "2",
+    "three": "3",
+    "four": "4",
+    "five": "5",
+    "six": "6",
+    "seven": "7",
+    "eight": "8",
+    "nine": "9"
+}
 
-line = list.readline()
+# Open the file in read mode
+f = open("test.txt", "r")
 
-emp_str = ""
-for d in line:
-    if d.isdigit():
-        emp_str = emp_str + d
+# Initialize the total number to zero
+total = 0
 
-#for 
+# Loop through each line in the file
+for line in f:
+    # Find all the numbers in the line as strings
+    numbers = re.findall("\d", line)
+    # Get the first and last number as integers
+    first = numbers[0]
+    last = numbers[-1]
+    # Add the first and last number to the total number
+    #print(first, last)
+    total += int(first + last)
 
-firstdigit = str(emp_str)[0]
-lastdigit = str(emp_str)[-1]
+# Close the file
+f.close()
 
-print(firstdigit,lastdigit)
+# Print the total number
+print(total)
